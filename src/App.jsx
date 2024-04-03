@@ -1,4 +1,6 @@
-import  Footer  from "./components/Footer"
+
+
+import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import About from "./sections/About"
 import Explore from "./sections/Explore"
@@ -30,7 +32,7 @@ function App() {
               <div className='gradient-04 z-0' />
                <Feedback />
               </div>
-              <Footer />
+               <Footer />
          </div>
      </div>
     
