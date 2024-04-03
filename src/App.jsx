@@ -1,4 +1,4 @@
-import { Footer } from "./components"
+import  Footer  from "./components/Footer"
 import Navbar from "./components/Navbar"
 import About from "./sections/About"
 import Explore from "./sections/Explore"
@@ -8,9 +8,6 @@ import Hero from "./sections/Hero"
 import Insights from "./sections/Insights"
 import WhatsNew from "./sections/WhatsNew"
 import World from "./sections/World"
-
-
-
 
 
 function App() {
