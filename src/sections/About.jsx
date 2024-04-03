@@ -2,7 +2,8 @@
 import { fadeIn,staggerContainer } from "../utils/motion";
 import styles from '../styles'
 import { motion } from "framer-motion";
-import {TypingText} from '../components'
+import {TypingText} from '../components/CustomTexts'
+
 const About = () => (
   <section className={`${styles.paddings} relative z-10`}>
     <div className="gradient-02 z-0" />
