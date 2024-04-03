@@ -1,39 +1,45 @@
 
-import { FaFacebook, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
-
-const Footer = () => {
-
-    const Links = [
-        {name:'Home', path: '/'},
-        {name:'Contact', path: '/contact'},
-        {name:'About', path: '/about '},
-        
-
-    ]
-  return (
-    <div className='flex flex-col md:flex-row md:justify-between items-center mt-10 bg-red-500 px-6 py-5'>
-        <div >
-            <a href='/'>
-            <h1 className='text-center md:text-start text-2xl  font-semibold'>Gladys <span className='text-red-600'>Blog</span></h1>
-            </a>
-            <p className='text-white max-w-xs text-xs mt-2 p-3'>Next.js uses file-system routing, which means the routes in your application are determined by how you structure your files.
-             Good to know: Although you can use both routers in the same project, routes in app will be prioritized over pages. We recommend using only one router in your new project to avoid confusion.</p>
+import { motion } from "framer-motion";
+import styles from "../styles";
+import { footerVariants } from "../utils/motion";
+import { socials } from "../constants";
+const Footer = () => (
+  <motion.footer
+    variants={footerVariants}
+     initial='hidden'
+     whileInView='show'
+     className={`${styles.paddings} py-8 relative`}
+  >
+     <div  className="footer-graient"/>
+     <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
+      <div className="flex items-center justify-between flex-wrap gap-5">
+          <h4 className="font-bold md:text-[64px] text-[44px] text-white">Enter the Metaverse </h4>
+          <button type="button" className="flex items-center h-fit py-4 px-6 bg-[#25618b] rounded-[32px] gap-12">
+              <img  
+               src="/headset.svg"
+               alt="headset"
+               className="w-[24px] h-[24px] object-contain"
             
-        </div>
-       
-        <div className='mt-5 md:mt-0'>
-            <h2 className='text-white font-semibold text-sm mb-3'>Follow us on our socials</h2>
-        <div className='flex justify-between items-center gap-1'>
-            <FaFacebook />
-            <FaInstagram />
-            <FaLinkedinIn/>
-            <FaTwitter />
-           </div>
-        </div>
+              />
+                 <span className="font-norml text-[16px] text-white">Enter the Metaverse</span>
+          </button>
+      </div>
+         <div className="flex flex-col">
+             <div className="mb-[50px] h-[2px] bg-white opacity-10" />
+             <div className="flex justify-between items-center flex-wrap gap-4">
+              <h4 className="font-extrabold text-[24px] text-white">Metaversus</h4>
+              <p className="font-normal text-[14px] text-white opacity-50">Copyright © 2021 - 2022 Metaversus. All rights reserved.</p>
+               <div className="flex justify-between items-center gap-4" >
+                {socials.map((social) => (
+                <div key={social.name } >
+                     <img src={social.url} alt={social.name} />
+                   </div>
+                ))}
+               </div>
+             </div>
+         </div>
+     </div>
+  </motion.footer>
+);
 
-
-    </div>
-  )
-}
-
-export default Footer
+export default Footer;

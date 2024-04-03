@@ -1,34 +1,42 @@
-import Banner from "./Components/Banner"
-import Footer from "./Components/Footer"
-import Navbar from "./Components/Navbar"
-import "slick-carousel/slick/slick.css"
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from "./Pages/Home";
-import NewBlog from "./Pages/NewBlog";
-import BlogDetails from "./Components/BlogDetails";
-import NotFound from "./Pages/NotFound";
-import Login from "./Pages/Login";
-import SignUp from "./Pages/SignUp";
+import { Footer } from "./components"
+import Navbar from "./components/Navbar"
+import About from "./sections/About"
+import Explore from "./sections/Explore"
+import Feedback from "./sections/Feedback"
+import GetStarted from "./sections/GetStarted"
+import Hero from "./sections/Hero"
+import Insights from "./sections/Insights"
+import WhatsNew from "./sections/WhatsNew"
+import World from "./sections/World"
+
+
 
 
 
 function App() {
   return (
-    <Router>
-      <div className="w-11/12 mx-auto md:w-10/12 md:mx-auto">
-      <Navbar />
-      <Banner/>
-       <Routes>
-         <Route path="/" element={<Home />} /> 
-         <Route path="/create" element={<NewBlog />} /> 
-         <Route path="/blogs/:id" element={<BlogDetails/>} />
-         <Route path="/Login" element={<Login/>} />
-         <Route path="/SignUp" element={<SignUp/>} />
-         <Route path="*" element={<NotFound />} /> 
-      </Routes>
-       <Footer/>
+      <div className='bg-primary-black overflow-hidden'>
+         <Navbar />
+         <Hero />
+         <div className='relative'>
+           <About />
+           <div className='gradient-03 z-0' />
+           <Explore />
+           <div className='relative'>
+            <GetStarted />
+            <div className='gradient-04 z-0' />
+            <WhatsNew />
+           </div>
+            <World />
+            <div className='relative'>
+              <Insights/>
+              <div className='gradient-04 z-0' />
+               <Feedback />
+              </div>
+              <Footer />
+         </div>
      </div>
-    </Router>
+    
   )
 }
 
